@@ -29,7 +29,7 @@ with open(file_to_load) as election_data:
 
     # Loop through each row of the dataset and process it
     for row in reader:
-           
+                   
         # Increment the total vote count for each row
         total_votes += 1
 
@@ -40,10 +40,8 @@ with open(file_to_load) as election_data:
         if Candidate_name in Candidates:
             Candidates[Candidate_name] += 1
         else:
-            Candidates[Candidate_name] =1
-            
-        # Add a vote to the candidate's count
-      
+            Candidates[Candidate_name] = 1
+                
 
 # Open a text file to save the output
 with open(file_to_output, "w") as txt_file:
@@ -74,11 +72,10 @@ with open(file_to_output, "w") as txt_file:
         if votes > max_votes:
             max_votes = votes
             Winner = candidate
-
-        # Print and save each candidate's vote count and percentage
-    print(f"{Candidates}: {percentage:.2f}% ({votes})")
+        print(f"{candidate}: {percentage:.2f}% ({votes})\n")
+        txt_file.write(f"{candidate}:{percentage:.2f}% ({votes})\n")
+      
     print("---------------------------------------")
-    txt_file.write(f"{Candidates}:{percentage:.2f}% ({votes})\n")
     txt_file.write("-------------------------------\n")
 
     # Generate and print the winning candidate summary
