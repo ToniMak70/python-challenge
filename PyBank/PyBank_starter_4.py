@@ -50,7 +50,7 @@ with open(file_to_load) as financial_data:
 # Generate the output summary
     # Print the output
     print("Financial Analysis")
-    print("--------------------------")
+    print("--------------------------------")
     print(f"Total Months: {Total_Months}")
     print(f"Total: ${Net_Total}")
     print(f"Average Change: ${Average_Change:.2f}")
@@ -61,7 +61,7 @@ with open(file_to_load) as financial_data:
     # Write the results to a text file
     with open(file_to_output, "w") as txt_file:
         txt_file.write("Financial Analysis\n")
-        txt_file.write("-----------------------\n")
+        txt_file.write("-----------------------------\n")
         txt_file.write(f"Total Months: {Total_Months}\n")
         txt_file.write(f"Total: ${Net_Total}\n")
         txt_file.write(f"Average Change: ${Average_Change:.2f}\n")
